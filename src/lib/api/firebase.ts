@@ -1,20 +1,19 @@
 /** Firebase configuration */
 
-import { FirebaseOptions, initializeApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import { GoogleAuthProvider, connectAuthEmulator, getAuth } from 'firebase/auth';
 import { connectFirestoreEmulator, getFirestore } from 'firebase/firestore';
 import { connectFunctionsEmulator, getFunctions } from 'firebase/functions';
 
 import { environment } from 'src/environments/environment';
 
-// TODO: integrate with environment config when deploying to production
-const firebaseConfig: FirebaseOptions = {
-  apiKey: 'your-api-key',
-  authDomain: 'your-project-id.firebaseapp.com',
+const firebaseConfig = {
+  apiKey: 'AIzaSyC9Oh3TeTLSxMNkFLkBOOoLVs01kTHcDik',
+  authDomain: 'friendlychat-d6dc5.firebaseapp.com',
   projectId: 'friendlychat-d6dc5',
-  storageBucket: 'your-project-id.appspot.com',
-  messagingSenderId: 'your-sender-id',
-  appId: 'your-app-id',
+  storageBucket: 'friendlychat-d6dc5.appspot.com',
+  messagingSenderId: '550311295925',
+  appId: '1:550311295925:web:cad179f7e3f9c390d5f7fc',
 };
 
 export const app = initializeApp(firebaseConfig);

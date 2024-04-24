@@ -8,7 +8,7 @@ export const createParticipantUser = async (
 ) => {
   const user = await app.auth().createUser({
     uid: participantId,
-    email: `${participantId}@palabrate`,
+    email: `${participantId}@palabrate.com`,
     emailVerified: false,
     password: participantId,
     displayName: name,

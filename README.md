@@ -1,4 +1,4 @@
-# Llm Mediators
+# LLM Mediation Experiments
 
 <div>
   <img src="https://img.shields.io/badge/Node.js-v18-339933?style=for-the-badge&logo=node.js" />
@@ -7,6 +7,8 @@
   <img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" />
   <img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" />
 </div>
+
+[Instance deployed at EPFL](./EPFL.md)
 
 ## Project Structure
 
@@ -25,13 +27,13 @@
 │       ├── app.ts      # Firebase app initialization
 │       └── index.ts    # Cloud functions entrypoint
 │
-├── node_modules
-│
-└── src               # Frontend source code
-    ├── app           # Angular JS 17 app & components
-    ├── assets        # Static assets
-    ├── environments  # Environment configuration
-    └── lib           # API, types & utilities
+└── webapp     # Webapp frontend source code
+    ├── node_modules
+    └── src               # Frontend source code
+        ├── app           # Angular JS 17 app & components
+        ├── assets        # Static assets
+        ├── environments  # Environment configuration
+        └── lib           # API, types & utilities
 ```
 
 ## Firebase
@@ -55,7 +57,7 @@ A database prototype schema can be found [here on dbdiagrams.io](https://dbdiagr
 You can seed the database with the default data by running the following command:
 
 ```bash
-curl http://127.0.0.1:5001/llm-mediator-political/us-central1/seedDatabase
+curl "http://127.0.0.1:5001/friendlychat-d6dc5/us-central1/seedDatabase?seeder_password=seeder_password"
 ```
 
 This calls a cloud functions that adds to the database the default data. You may want to clear it first.
@@ -66,8 +68,9 @@ We use Firebase Cloud Functions to run server-side code. The functions are locat
 
 ```bash
 cd functions
+cp .env.example .env  # Copy the example environment file
 npm install  # Install the dependencies
-npm run watch-functions  # Build the functions and watch for file changes for rebuilding
+npm run build:watch # Build the functions and watch for file changes for rebuilding
 ```
 
 Upon running `npm run build`, if the emulator is running, it will automatically reload the functions.
@@ -112,30 +115,31 @@ You will then be able to access the following UIs:
 
 If you have everything installed, you can use the `restore terminals` extension in order to run all necessary commands at once (`ctrl + shift + P` > `Restore Terminals`).
 
-## Development server
+## Webapp
 
+The webapp is made using Angular JS 17.
 Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Recommended editor setup
+### Recommended editor setup
 
 This code is being developed using [Visual Studio Code](https://code.visualstudio.com/). Make sure to install the angular extension.
 
-## Code scaffolding
+### Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Build
 
 Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Running unit tests
 
 Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7; it was then updated to Angular 17.

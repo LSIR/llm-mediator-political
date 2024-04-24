@@ -11,7 +11,10 @@ import { TemplatesSeeder } from '../seeders/templates.seeder';
 import { createParticipantUser } from '../utils/create-participant-user';
 
 export const seedDatabase = onRequest(async (request, response) => {
-  // TODO: check request auth (avoid generating dummy stuff without checking)
+  if (process.env.SEEDER_PASSWORD !== request.query.seeder_password) {
+    response.status(401).send('Unauthorized');
+    return;
+  }
 
   // Create the default template and add it to the database
   const template = TemplatesSeeder.create();
