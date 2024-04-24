@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 const firebaseConfig: FirebaseOptions = {
   apiKey: 'your-api-key',
   authDomain: 'your-project-id.firebaseapp.com',
-  projectId: 'llm-mediator-political',
+  projectId: 'friendlychat-d6dc5',
   storageBucket: 'your-project-id.appspot.com',
   messagingSenderId: 'your-sender-id',
   appId: 'your-app-id',

@@ -14,5 +14,8 @@
         "eslint-plugin-vue/object-curly-spacing": "off"
       }
     }
-  ]
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  }
 }
