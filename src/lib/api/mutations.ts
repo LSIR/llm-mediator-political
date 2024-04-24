@@ -5,23 +5,23 @@ import { HttpClient } from '@angular/common/http';
 import { QueryClient, injectMutation } from '@tanstack/angular-query-experimental';
 import { UserCredential, signInWithEmailAndPassword } from 'firebase/auth';
 import {
-  ChatStageUpdate,
-  CreationResponse,
-  OnError,
-  OnSuccess,
-  ProfileTOSData,
-  SurveyStageUpdate,
+    ChatStageUpdate,
+    CreationResponse,
+    OnError,
+    OnSuccess,
+    ProfileTOSData,
+    SurveyStageUpdate,
 } from '../types/api.types';
 import {
-  createExperimentCallable,
-  createTemplateCallable,
-  deleteExperimentCallable,
-  discussItemsMessageCallable,
-  mediatorMessageCallable,
-  toggleReadyToEndChatCallable,
-  updateProfileAndTOSCallable,
-  updateStageCallable,
-  userMessageCallable,
+    createExperimentCallable,
+    createTemplateCallable,
+    deleteExperimentCallable,
+    discussItemsMessageCallable,
+    mediatorMessageCallable,
+    toggleReadyToEndChatCallable,
+    updateProfileAndTOSCallable,
+    updateStageCallable,
+    userMessageCallable,
 } from './callables';
 import { auth } from './firebase';
 
@@ -134,7 +134,7 @@ export const toggleChatMutation = () => {
 // Login mutation
 export const loginMutation = (onSuccess?: OnSuccess<UserCredential>, onError?: OnError) => {
   return injectMutation(() => ({
-    mutationFn: (code: string) => signInWithEmailAndPassword(auth, `${code}@palabrate`, code),
+    mutationFn: (code: string) => signInWithEmailAndPassword(auth, `${code}@palabrate.com`, code),
     onSuccess,
     onError,
   }));

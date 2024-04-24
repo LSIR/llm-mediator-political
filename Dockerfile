@@ -1,6 +1,6 @@
 #This below works if you run the docker on Kubernetes Modemos but not on  PC36
 # Stage 0, "build-stage", based on Node.js, to build and compile the frontend
-FROM node:alpine as build-stage
+FROM node:20-alpine as build-stage
 WORKDIR /app
 COPY package*.json /app/
 RUN npm install -g @angular/cli

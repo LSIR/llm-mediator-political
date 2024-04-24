@@ -9,7 +9,6 @@ import {
   UserMessageMutationData,
 } from '../validation/messages.validation';
 
-import 'firebase/compat/auth';
 import { AuthGuard } from '../utils/auth-guard';
 
 export const userMessage = onCall(async (request) => {
